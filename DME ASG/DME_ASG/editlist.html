@@ -24,7 +24,7 @@
     </script>
 </head>
 
-<body onload="onstart()">
+<body onload="load()">
     
     <ion-app >
         <ion-menu side="start" content-id="main-content">
@@ -73,19 +73,25 @@
             
               <ion-content>
                   <ion-item>
-                      <h1>Screentime Tracker</h1>
+                      <h1>Edit List</h1>
                       <ion-label position="floating">Game</ion-label>
-                      <ion-input type="text" id="input-reason"></ion-input>
+                      <ion-input class="gaming" type="text" placeholder ="hello"><div id="input-edit"></div></ion-input>
                   </ion-item>
                   <ion-item>
                       <ion-label position="floating">Time spent (hours)</ion-label>
-                      <ion-input type="number" id="input-amount"></ion-input>
+                      <ion-input class="hours" type="number" placeholder ="hello"><div id="input-edit"></div></ion-input>
                   </ion-item>
                   <div class="ion-margin" ion-margin-vertical ion-text-right">
                       
   
-                      <ion-button id="btn-confirm">Update</ion-button>
+                      <ion-button id="btn-save">Save</ion-button>
               </div>  
+
+              <div class="ion-margin" ion-margin-vertical ion-text-right">
+                      
+  
+                <ion-button color="danger" id="btn-del" onclick="remove()">delete</ion-button>
+        </div> 
               
               
               
@@ -113,7 +119,7 @@
             await menuController.open();
         }
     </script>
-    <script src = "add.js" async></script>
+    <script src = "editlist.js" async></script>
     <script src = "Home.js" async></script>
 </body>
 
