@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="add.css">
+
+    <style>
+        :root {
+            --ion-safe-area-top: 20px;
+            --ion-safe-area-bottom: 22px;
+
+        }
+    </style>
+    <script type="module">
+        import { menuController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+        window.menuController = menuController;
+    </script>
+</head>
+
+<body>
+    
+    <ion-app >
+        <ion-menu side="start" content-id="main-content">
+            <ion-header>
+                <ion-toolbar translucent>
+                    <ion-title>Menu</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-list>
+                    <ion-item>
+                        <ion-button color="dark" size="default" fill="clear" onclick ="homeClick()">
+                        <ion-icon name="home-outline" slot="start"></ion-icon>
+                        <ion-label>Home</ion-label>
+                        </ion-button>
+                        
+                        
+                    </ion-item>
+                    <ion-item>
+                        <ion-button color="dark" size="default" fill="clear" onclick ="addClick()">
+                            <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+                            <ion-label>Tracker</ion-label>
+                            </ion-button>
+                    </ion-item>
+                    <ion-item>
+                        <ion-button color="dark" size="default" fill="clear" onclick ="setClick()">
+                            <ion-icon name="settings-outline" slot="start"></ion-icon>
+                            <ion-label>Settings</ion-label>
+                            </ion-button>
+                    </ion-item>
+                    
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+
+        <div class="ion-page" id="main-content" --ion-safe-area-left: 20px; --ion-safe-area-right: 20px;>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title>PlayTrack</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            
+              <ion-content>
+                  <ion-item>
+                      <h1>Screentime Tracker</h1>
+                      <ion-label position="floating">Game</ion-label>
+                      <ion-input type="text" id="input-reason"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Time spent (hours)</ion-label>
+                      <ion-input type="number" id="input-amount"></ion-input>
+                  </ion-item>
+                  <div class="ion-margin" ion-margin-vertical ion-text-right">
+                      
+  
+                      <ion-button id="btn-confirm">Update</ion-button>
+              </div>  
+              
+              
+              
+              <ion-list class="list">
+  
+              </ion-list>
+
+              <ion-item color="green" id="bar-color">
+                <ion-label>Hours Bar</ion-label>
+                <div class=total-bar>0</div>
+              </ion-item>
+
+
+              <div id="result"></div>
+
+              
+
+                  
+        </div>
+
+    </ion-app>
+
+    <script>
+        async function openMenu() {
+            await menuController.open();
+        }
+    </script>
+    <script src = "add.js" async></script>
+    <script src = "Home.js" async></script>
+</body>
+
+</html>
